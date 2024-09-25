@@ -1,17 +1,36 @@
 :root {
   --main-color: #2c2b2b;
-  --main-background-color: #cfcfcf;
+  --main-background-color: #fffefe;
   --profile-color: #65da65;
+  --profile-color-2: #4ea84e;
   --dark-color: #333;
   --light-color: #fff;
-}
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  --root-bg-color: linear-gradient(0deg, #85ffbd 0%, #fffb7d 100%);
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.5s ease;
+}
+
+html {
+  background-color: #fffb7d;
+  background-image: var(--root-bg-color);
+}
+body {
+  text-align: center;
+}
+img {
+  width: 100%;
+  object-fit: cover;
+}
+main {
+  max-width: 1280px;
+  width: 90vw;
+  margin: 5em auto;
+}
 .title h2 {
   font-size: 2.5rem;
   color: var(--main-color);
@@ -20,11 +39,122 @@
 .underline {
   height: 6px;
   width: 20rem;
-  background-color: var(--profile-color);
+  background-color: var(--main-color);
   margin: auto;
   margin-top: 0.5rem;
 }
+.refresh{
+  background-color: var(--profile-color);
+  color: var(--light-color);
+  padding: 1em 2em;
+  margin: 4em 0;
+  border: none
+}
+.refresh:hover,
+.refresh:focus{
+  border: none;
+  outline: none;
+  background-color: #4ea84e;
+}
+section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.8em;
+  margin-top: 5em;
+}
 
+@media screen and (max-width: 992px) {
+  section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 768px) {
+  section {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 500px) {
+  .title h2 {
+    font-size: 2rem;
+  }
+
+  .underline {
+    width: 15rem;
+  }
+
+  .section {
+    margin-top: 3em;
+  }
+}
+
+article {
+  background-color: var(--main-background-color);
+  border-radius: 0.5rem;
+  position: relative;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+article:hover {
+  box-shadow: 0px 15px 10px rgba(0, 0, 0, 0.2);
+}
+
+article img {
+  height: 20rem;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+article .tour-price {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: var(--profile-color);
+  color: var(--light-color);
+  padding: 0.5em 1em;
+  border-top-right-radius: 0.5rem;
+}
+.tour-info {
+  padding: 1em 1.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.tour-info h5 {
+  padding: 1em;
+  font-size: 1.2rem;
+  color: var(--main-color);
+}
+.tour-info p {
+  font-size: 1rem;
+  color: var(--dark-color);
+  line-height: 1.5rem;
+}
+.tour-info p .read-more {
+  color: var(--profile-color);
+  text-decoration: none;
+  background: none;
+  outline: none;
+  cursor: pointer;
+  border: none;
+}
+.tour-info p .read-more:hover {
+  color: var(--profile-color-2);
+}
+.delete-btn {
+  background-color: var(--profile-color);
+  color: var(--light-color);
+  padding: 0.5em 1.6em;
+  border: none;
+  border-bottom-left-radius: 2rem;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.25s ease-in-out;
+}
+.delete-btn:hover,
+.delete-btn:focus {
+  border-bottom-left-radius: 0.5em;
+  outline: none;
+}
+
+/* loading */
 .loading {
   font-size: 2rem;
   color: var(--main-color);

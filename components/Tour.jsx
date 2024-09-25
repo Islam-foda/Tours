@@ -1,18 +1,25 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 export default function Tour(props) {
-  console.log(props);
+    const {id,img,price,name,info,removeTour} = props
+  const [readMore, setReadMore] = React.useState(false);
+
+  function showHide() {
+    setReadMore(!readMore);
+  }
   return (
-    <article key={props.id}>
-      <img src={props.img} alt={props.name}></img>
-      <span className="tour-price">${props.price}</span>
+    <article key={id}>
+      <img src={img} alt={name}></img>
+      <span className="tour-price">${price}</span>
       <div className="tour-info">
-        <h4>{props.name}</h4>
+        <h5>{name}</h5>
         <p>
-          {props.info}
-          <button className="read-more">read more</button>
+          {readMore ? info : info.substring(0, 200) + "..."}
+          <button onClick={showHide} className="read-more">
+            {readMore ? "show less" : "read more"}
+          </button>
         </p>
-        <button className="delete-btn">not interested</button>
+        <button onClick={()=>removeTour(id)} className="delete-btn">not interested</button>
       </div>
     </article>
   );
