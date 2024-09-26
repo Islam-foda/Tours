@@ -6,8 +6,8 @@
   --dark-color: #333;
   --light-color: #fff;
   --root-bg-color: linear-gradient(0deg, #85ffbd 0%, #fffb7d 100%);
+  font-family: Inter, system-ui, Helvetica, Arial, sans-serif;
 }
-
 * {
   margin: 0;
   padding: 0;
@@ -15,43 +15,45 @@
   transition: all 0.5s ease;
 }
 
-html {
-  background-color: #fffb7d;
-  background-image: var(--root-bg-color);
-}
 body {
+  background-color: #fffb6d;
   text-align: center;
 }
 img {
   width: 100%;
   object-fit: cover;
+  filter: grayscale(1);
 }
+
 main {
+  background: #fffb6d;
   max-width: 1280px;
   width: 90vw;
   margin: 5em auto;
+  padding: 0em 2em;
 }
 .title h2 {
-  font-size: 2.5rem;
+  font-size: 2rem;
+  font-weight: 400;
   color: var(--main-color);
 }
 
 .underline {
-  height: 6px;
-  width: 20rem;
+  height: 4px;
+  width: 16rem;
   background-color: var(--main-color);
   margin: auto;
   margin-top: 0.5rem;
 }
-.refresh{
+.refresh {
   background-color: var(--profile-color);
   color: var(--light-color);
   padding: 1em 2em;
   margin: 4em 0;
-  border: none
+  border: none;
 }
 .refresh:hover,
-.refresh:focus{
+.refresh:focus {
   border: none;
   outline: none;
   background-color: #4ea84e;
@@ -60,7 +62,7 @@ section {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.8em;
-  margin-top: 5em;
+  margin-top: 2em;
 }
 
 @media screen and (max-width: 992px) {
@@ -83,7 +85,7 @@ section {
   }
 
   .section {
-    margin-top: 3em;
+    margin-top: 2em;
   }
 }
 
@@ -93,15 +95,21 @@ article {
   position: relative;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
 }
+
 article:hover {
-  box-shadow: 0px 15px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 15px 10px rgb(0 0 0 / 30%);
 }
 
 article img {
-  height: 20rem;
+  height: 15rem;
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
 }
+
+article:hover img {
+  filter: none;
+}
+
 article .tour-price {
   position: absolute;
   top: 0;
@@ -112,18 +120,18 @@ article .tour-price {
   border-top-right-radius: 0.5rem;
 }
 .tour-info {
-  padding: 1em 1.5em;
+  padding: 0.5em 1em;
   display: flex;
   flex-direction: column;
   align-items: stretch;
 }
 .tour-info h5 {
   padding: 1em;
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: var(--main-color);
 }
 .tour-info p {
-  font-size: 1rem;
+  font-size: 0.8rem;
   color: var(--dark-color);
   line-height: 1.5rem;
 }
@@ -141,7 +149,8 @@ article .tour-price {
 .delete-btn {
   background-color: var(--profile-color);
   color: var(--light-color);
-  padding: 0.5em 1.6em;
+  margin-top: 0.5em;
+  padding: 0.5em 1em;
   border: none;
   border-bottom-left-radius: 2rem;
   cursor: pointer;
@@ -158,4 +167,21 @@ article .tour-price {
 .loading {
   font-size: 2rem;
   color: var(--main-color);
+  width: 3em;
+  height: 3em;
+  border: 0.1em dashed var(--profile-color);
+  border-radius: 50%;
+  border-top: 0.1em dashed transparent;
+  border-left: 0.1em dashed var(--profile-color);
+  border-right: 0.1em dashed var(--profile-color);
+  border-bottom: 0.1em dashed var(--profile-color);
+  animation: spin 3s linear infinite forwards;
+  position: relative;
+  margin: 3em auto;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(1turn);
+  }
 }
