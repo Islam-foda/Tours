@@ -27,8 +27,8 @@ img {
 
 main {
   background: var(--light-color);
-  max-width: 1280px;
-  width: 80vw;
+  max-width: 85em;
+    width: 100vw;
   margin: 5em auto;
   padding: 0em 2em;
 }
