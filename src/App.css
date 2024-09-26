@@ -4,7 +4,7 @@
   --profile-color: #65da65;
   --profile-color-2: #4ea84e;
   --dark-color: #333;
-  --light-color: #fff;
+  --light-color: #dae3f0;
   --root-bg-color: linear-gradient(0deg, #85ffbd 0%, #fffb7d 100%);
   font-family: Inter, system-ui, Helvetica, Arial, sans-serif;
 }
@@ -16,7 +16,7 @@
 }
 
 body {
-  background-color: #fffb6d;
+  background-color: var(--light-color);
   text-align: center;
 }
 img {
@@ -26,22 +26,22 @@ img {
 }
 
 main {
-  background: #fffb6d;
+  background: var(--light-color);
   max-width: 1280px;
-  width: 90vw;
+  width: 80vw;
   margin: 5em auto;
   padding: 0em 2em;
 }
 .title h2 {
   font-size: 2rem;
-  font-weight: 400;
-  color: var(--main-color);
+  font-weight: 700;
+  color: var(--dark-color);
 }
 
 .underline {
   height: 4px;
   width: 16rem;
-  background-color: var(--main-color);
+  background-color: var(--dark-color);
   margin: auto;
   margin-top: 0.5rem;
 }
@@ -120,18 +120,18 @@ article .tour-price {
   border-top-right-radius: 0.5rem;
 }
 .tour-info {
-  padding: 0.5em 1em;
+  padding: .5em 1.5em;
   display: flex;
   flex-direction: column;
   align-items: stretch;
 }
 .tour-info h5 {
   padding: 1em;
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: var(--main-color);
 }
 .tour-info p {
-  font-size: 0.8rem;
+  font-size: 1rem;
   color: var(--dark-color);
   line-height: 1.5rem;
 }
@@ -148,7 +148,7 @@ article .tour-price {
 }
 .delete-btn {
   background-color: var(--profile-color);
-  color: var(--light-color);
+  color: var(--dark-color);
   margin-top: 0.5em;
   padding: 0.5em 1em;
   border: none;
@@ -159,6 +159,8 @@ article .tour-price {
 }
 .delete-btn:hover,
 .delete-btn:focus {
+  color: var(--main-background-color);
+  background-color: var(--dark-color);
   border-bottom-left-radius: 0.5em;
   outline: none;
 }
