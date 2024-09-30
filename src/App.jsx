@@ -1,8 +1,9 @@
-import { useState, useEffect } from "react";
-import "./App.css";
-import Tours from "../components/Tours.jsx";
+import { useEffect, useState } from "react";
 import Title from "../components/Title.jsx";
+import Tours from "../components/Tours.jsx";
+import "./App.css";
 import Loading from "../components/Loading.jsx";
+
 function App() {
   const url = "https://www.course-api.com/react-tours-project";
   const [tours, setTours] = useState([]);
