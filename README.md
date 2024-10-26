@@ -10,4 +10,4 @@ using react to create this project
 
 ## Live Demo
 
-[Live Demo](https://tours-prefered.netlify.app/)
+[Tours App](https://tours-prefered.netlify.app/)
